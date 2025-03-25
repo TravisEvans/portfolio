@@ -1,0 +1,105 @@
+/* reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono';
+  font-size: 18px;
+  color: #000;
+  background-color: #e0ffffcc;
+  line-height: 1.8em; /*this might be a little large*/
+}
+
+a {
+  color: #0f81fc;
+  text-decoration: none;
+}
+
+a:hover {
+  color:#0f3bfc;
+  text-decoration: underline;
+}
+
+/* Layout */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 680px;
+}
+
+/* Header */
+header {
+  padding: 2rem 0;
+  border-bottom: 1px solid #000;
+}
+
+header h1 {
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* my god damn hero */
+.hero {
+  padding: 8rem 0 6rem 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 0;
+}
+
+.section.light {
+  background-color: #f9f9f9;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+  color: #000;
+}
+
+.work-list {
+  list-style:circle;
+  padding-left: 0;
+}
+
+.work-list li {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #bff; /*i love that hex code*/
+}
