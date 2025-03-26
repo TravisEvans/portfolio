@@ -1,4 +1,5 @@
 /* reset and basics */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +11,12 @@ html {
 }
 
 body {
-  font-family: 'JetBrains Mono';
+  font-family: 'Fira Code';
   font-size: 18px;
   color: #000;
-  background-color: #e0ffffcc;
-  line-height: 1.8em; /*this might be a little large*/
+  background-color: #ccc5;
+  line-height: 1.8em;
+  /*this might be a little large*/
 }
 
 a {
@@ -23,7 +25,7 @@ a {
 }
 
 a:hover {
-  color:#0f3bfc;
+  color: #0f3bfc;
   text-decoration: underline;
 }
 
@@ -40,8 +42,13 @@ a:hover {
 
 /* Header */
 header {
-  padding: 2rem 0;
+  display: flex;
+  background-color: #e3e3eefa;
+  padding: 1em 0;
   border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 header h1 {
@@ -51,14 +58,31 @@ header h1 {
 }
 
 nav {
-  display: flex;
+  width: 100%;
+  float: left;
   gap: 1.5rem;
+}
+
+nav a {
+  float: right;
+  margin-left: 1.5rem;
 }
 
 /* my god damn hero */
 .hero {
+  display: flex;
   padding: 8rem 0 6rem 0;
   text-align: center;
+}
+
+.lHero,
+rHero {
+  flex: 1;
+  padding: 1em;
+}
+
+.lHero {
+  background-image: url("images/lake.jpg");
 }
 
 .hero h2 {
@@ -88,7 +112,7 @@ h3 {
 }
 
 .work-list {
-  list-style:circle;
+  list-style: circle;
   padding-left: 0;
 }
 
@@ -101,5 +125,14 @@ footer {
   padding: 4rem 0 2rem 0;
   text-align: center;
   font-size: 0.85rem;
-  color: #bff; /*i love that hex code*/
+  color: #bff;
+  /*i love that hex code*/
 }
+
+/*links*/
+/*.fira-code-<uniquifier> {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}no use rn*/

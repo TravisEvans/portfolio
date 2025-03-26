@@ -1,0 +1,138 @@
+/* reset and basics */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Fira Code';
+  font-size: 18px;
+  color: #000;
+  background-color: #ccc5;
+  line-height: 1.8em;
+  /*this might be a little large*/
+}
+
+a {
+  color: #0f81fc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0f3bfc;
+  text-decoration: underline;
+}
+
+/* Layout */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 680px;
+}
+
+/* Header */
+header {
+  display: flex;
+  background-color: #e3e3eefa;
+  padding: 1em 0;
+  border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+header h1 {
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+nav {
+  width: 100%;
+  float: left;
+  gap: 1.5rem;
+}
+
+nav a {
+  float: right;
+  margin-left: 1.5rem;
+}
+
+/* my god damn hero */
+.hero {
+  display: flex;
+  padding: 8rem 0 6rem 0;
+  text-align: center;
+}
+
+.lHero,
+rHero {
+  flex: 1;
+  padding: 1em;
+}
+
+.lHero {
+  background-image: url("images/lake.jpg");
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 0;
+}
+
+.section.light {
+  background-color: #f9f9f9;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+  color: #000;
+}
+
+.work-list {
+  list-style: circle;
+  padding-left: 0;
+}
+
+.work-list li {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #bff;
+  /*i love that hex code*/
+}
+
+/*links*/
+/*.fira-code-<uniquifier> {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}no use rn*/

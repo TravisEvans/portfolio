@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travis Evans | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Travis Evans</h1>
+      <nav>
+        <span>Portfolio of works</span>
+        <a href="/about">About</a>
+        <a href="/work">Work</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="work" class="section light">
+    <div class="container narrow">
+      <h3>My noteable works(?)</h3>
+      <ul class="work-list">
+        <li><a href="#">link to nested page</a></li>
+        <li><a href="#">link to another nested page</a></li>
+        <li><a href="#">link to another another nested page</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container narrow">
+      <p>&copy; <span id="jsYear"></span> Travis Evans</p>
+    </div>
+  </footer>
+
+
+  <!--no more clay from here, just magic-->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+
+</body>
+
+
+</html>
