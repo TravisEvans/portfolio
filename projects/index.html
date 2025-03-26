@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travis Evans | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" /> <!--testing css, important for editing-->
+  <link rel="stylesheet" href="portfolio/style.css" />
+</head>
+
+<body>
+  <!-- repeated section, added with js -->
+  <header id="header"></header>
+  
+  <section class="hero">
+    <div class="textHero container">
+            <h2>Projects.</h2>
+            <h3>Browse, enjoy.</h3>
+
+    </div>
+  </section>
+
+  <section id="brief" class="section light">
+    <div class="container narrow">
+      <h3>My noteable works(?)</h3>
+      <ul class="work-list">
+        <li><a href="#">link to nested page</a></li>
+        <li><a href="#">link to another nested page</a></li>
+        <li><a href="#">link to another another nested page</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- again, repeated -->
+  <footer id="footer"></footer>
+
+
+  <!--no more clay from here, just magic-->
+  <script>
+    // header injection (this was annoying, html and it's load order make this difficult)
+    fetch("../header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header").outerHTML = data;
+        });
+    
+    // footer injection
+    fetch("../footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer").outerHTML = data;
+
+          //footer date (also anoyying, this runs after the footer is loaded)
+          document.getElementById("year").textContent = new Date().getFullYear();
+        });
+      
+  </script>
+
+
+</body>
+
+
+</html>

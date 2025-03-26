@@ -8,42 +8,27 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" /> <!--testing css, important for editing-->
+  <link rel="stylesheet" href="portfolio/style.css" />
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>Travis Evans</h1>
-      <nav>
-        <span>Portfolio of works</span>
-        <a href="/about">About</a>
-        <a href="/work">Work</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+  <!-- repeated section, added with js -->
+  <header id="header"></header>
+  
   <section class="hero">
-    <div class="lHero container">
-      <!--bg image-->
+    <div class="textHero container">
+            <h2>Subtle. Intentional.</h2><br>
+            <h2>Created with purpose.</h2>
+            <h3>And painstakingly designed.</h3>
+
     </div>
-    <div class="rHero container">
-      <h2>Hey! Hi! Hello!</h2>
-      <p>Something something.</p>
+    <div class="picHero">
+        <!--bg image-->
     </div>
   </section>
 
-  <section id="about" class="section">
-    <div class="container narrow">
-      <h3>About</h3>
-      <p>
-        I don't like clutter.
-      </p>
-    </div>
-  </section>
-
-  <section id="work" class="section light">
+  <section id="brief" class="section dark">
     <div class="container narrow">
       <h3>My noteable works(?)</h3>
       <ul class="work-list">
@@ -61,16 +46,28 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container narrow">
-      <p>&copy; <span id="jsYear"></span> Travis Evans</p>
-    </div>
-  </footer>
+  <footer id="footer"></footer>
 
 
   <!--no more clay from here, just magic-->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // header injection (this was annoying, html and it's load order make this difficult)
+    fetch("../header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header").outerHTML = data;
+        });
+    
+    // footer injection
+    fetch("../footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer").outerHTML = data;
+
+          //footer date (also anoyying, this runs after the footer is loaded)
+          document.getElementById("year").textContent = new Date().getFullYear();
+        });
+      
   </script>
 
 

@@ -8,41 +8,61 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" /> <!--testing css, important for editing-->
+  <link rel="stylesheet" href="portfolio/style.css" />
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>Travis Evans</h1>
-      <nav>
-        <span>Portfolio of works</span>
-        <a href="/about">About</a>
-        <a href="/work">Work</a>
-        <a href="/contact">Contact</a>
-      </nav>
+  <!-- repeated section, added with js -->
+  <header id="header"></header>
+  
+  <section class="hero">
+    <div class="picHero" style="background-image: url(../images/town.jpg);background-position: bottom left;"> <!--easiest way of changing image whilst ensuring an image will exist imo-->
+        <!--bg image-->
     </div>
-  </header>
+    <div class="textHero container">
+            <h2>Who I am.</h2><br>
+            <h2>What I do.</h2>
+            <h3>At least partially.</h3>
 
-  <section id="about" class="section">
-    <div class="container narrow">
-      <h3>About</h3>
-      <p>
-        I don't like clutter.
-      </p>
     </div>
   </section>
 
-  <footer>
-    <div class="container narrow">
-      <p>&copy; <span id="jsYear"></span> Travis Evans</p>
+  <section id="contact" class="section light">
+    <div class="container ">
+      <h3>Formally, Mr Evans.</h3>
+      <br>
+      <p>Professionally, I'm a developer, though this is a vague concept. <br>
+      My current role encompasses graphic design, marketing and SEO, and photography. <br>
+      Hence the photos. I think they're nice. I like design.<br>
+      <br>
+      Currently, I am studying computer science. <br>
+      I've worked with code for years prior. It's useful, and entertaining.
     </div>
-  </footer>
+  </section>
+
+  <footer id="footer"></footer>
 
 
   <!--no more clay from here, just magic-->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // header injection (this was annoying, html and it's load order make this difficult)
+    fetch("../header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header").outerHTML = data;
+        });
+    
+    // footer injection
+    fetch("../footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer").outerHTML = data;
+
+          //footer date (also anoyying, this runs after the footer is loaded)
+          document.getElementById("year").textContent = new Date().getFullYear();
+        });
+      
   </script>
 
 

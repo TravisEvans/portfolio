@@ -4,43 +4,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travis Evans | Portfolio</title>
+  <title>Travis Evans | Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" /> <!--testing css, important for editing-->
+  <link rel="stylesheet" href="portfolio/style.css" />
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <h1>Travis Evans</h1>
-      <nav>
-        <span>Portfolio of works</span>
-        <a href="/about">About</a>
-        <a href="/work">Work</a>
-        <a href="/contact">Contact</a>
-      </nav>
+  <!-- repeated section, added with js -->
+  <header id="header"></header>
+  
+  <section class="hero">
+    <div class="picHero" style="background-image: url(../images/field.jpg);">
+      <!--easiest way of changing image whilst ensuring an image will exist imo-->
+      <!--bg image-->
     </div>
-  </header>
-
-  <section id="contact" class="section">
+    <div class="textHero container">
+      <h2>Get in touch.</h2>
+      <h3>Or just go <a href="../projects/" style="color:black;">look at my works.</a></h3>
+  
+    </div>
+  </section>
+  
+  <section id="contact" class="section light">
     <div class="container narrow">
       <h3>Contact</h3>
-      <p>Email me at <a href="mailto:notmypersonalEmail@fakemail.com">travisevans@notmypersonalEmail.com</a></p>
+      <p>I am open to employment, hackathons, or other enquiries also.</p>
+      <p>Feel free to send a message, and I will respond. Eventually.</p>
+      <p>Email me:&nbsp;&nbsp;<a href="mailto:notmypersonalEmail@fakemail.com">nottravisevans@thisEmailDoesntWork.com</a></p><!--I don't actually know how to make an email server(?)-->
+      <p>Github:&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/TravisEvans">github.com/TravisEvans</a></p><!--I don't actually know how to make an email server(?)-->
     </div>
   </section>
 
-  <footer>
-    <div class="container narrow">
-      <p>&copy; <span id="jsYear"></span> Travis Evans</p>
-    </div>
-  </footer>
+  <footer id="footer"></footer>
 
-  
+
   <!--no more clay from here, just magic-->
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // header injection (this was annoying, html and it's load order make this difficult)
+    fetch("../header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header").outerHTML = data;
+        });
+    
+    // footer injection
+    fetch("../footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer").outerHTML = data;
+
+          //footer date (also anoyying, this runs after the footer is loaded)
+          document.getElementById("year").textContent = new Date().getFullYear();
+        });
+      
   </script>
 
 

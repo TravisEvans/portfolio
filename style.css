@@ -13,14 +13,14 @@ html {
 body {
   font-family: 'Fira Code';
   font-size: 18px;
+  font-weight: 300;
   color: #000;
-  background-color: #ccc5;
-  line-height: 1.8em;
-  /*this might be a little large*/
+  background-color: #f5f7f8;
+  line-height: 2em;
 }
 
 a {
-  color: #0f81fc;
+  color: #5874be;
   text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ a:hover {
 /* Header */
 header {
   display: flex;
-  background-color: #e3e3eefa;
+  background-color: #e3e6eaf9;
   padding: 1em 0;
   border-bottom: 1px solid #000;
   position: sticky;
@@ -53,41 +53,69 @@ header {
 
 header h1 {
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-bottom: 0.5rem;
+}
+
+header h1 a {
+  text-decoration: none;
+  color:#000
+}
+
+header h1 a:hover {
+  text-decoration: underline #888;
+  color:#000
 }
 
 nav {
   width: 100%;
-  float: left;
-  gap: 1.5rem;
+  /* gap: 1.5rem; */
 }
 
 nav a {
   float: right;
-  margin-left: 1.5rem;
+  margin-left: 1.8em;
 }
 
 /* my god damn hero */
 .hero {
   display: flex;
-  padding: 8rem 0 6rem 0;
   text-align: center;
+  min-height:45em;
 }
 
-.lHero,
-rHero {
+.hero h3 {
+  margin-top: 0.5em;
+  font-size: 1.6rem;
+}
+
+.textHero, .picHero {
   flex: 1;
-  padding: 1em;
 }
 
-.lHero {
+.textHero {
+  background-color: #f5f7f8;
+  padding: 8rem 0 6rem 0;
+}
+
+.picHero {
   background-image: url("images/lake.jpg");
+  background-size:cover;
+  background-position-x: 50%; /*I want the duckies*/
+  background-repeat: no-repeat;
+  width:100%;
 }
 
-.hero h2 {
+h2 {
   font-size: 2.5em;
   font-weight: 300;
+}
+
+h3 {
+  font-size: 1.9rem;
+  /* margin-bottom: 1.5rem; */
+  font-weight: 200;
+  color: #000;
 }
 
 .hero p {
@@ -101,14 +129,11 @@ rHero {
 }
 
 .section.light {
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  font-weight: normal;
-  color: #000;
+.section.dark {
+  background-color: #e3e6ea;
 }
 
 .work-list {
@@ -125,8 +150,9 @@ footer {
   padding: 4rem 0 2rem 0;
   text-align: center;
   font-size: 0.85rem;
-  color: #bff;
-  /*i love that hex code*/
+  color: #000;
+  background-color: #e3e6eaf9;
+  z-index: 999;
 }
 
 /*links*/
