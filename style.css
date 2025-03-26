@@ -29,6 +29,19 @@ a:hover {
   text-decoration: underline;
 }
 
+ul {
+  padding-left: 2.5em;
+  font-weight: 500;
+  list-style-type: circle;
+}
+ul li p{
+  padding-left: 1.5em;
+}
+
+p {
+  font-weight: 200;
+}
+
 /* Layout */
 .container {
   width: 90%;
@@ -81,7 +94,7 @@ nav a {
 .hero {
   display: flex;
   text-align: center;
-  min-height:45em;
+  min-height:40em;
 }
 
 .hero h3 {
@@ -101,7 +114,7 @@ nav a {
 .picHero {
   background-image: url("images/lake.jpg");
   background-size:cover;
-  background-position-x: 50%; /*I want the duckies*/
+  background-position: 50% 100%; /*I want the duckies*/
   background-repeat: no-repeat;
   width:100%;
 }
@@ -136,14 +149,19 @@ h3 {
   background-color: #e3e6ea;
 }
 
-.work-list {
-  list-style: circle;
+.noteableList {
   padding-left: 0;
 }
 
-.work-list li {
+.noteableList li {
   margin-bottom: 1rem;
 }
+
+/* id items */
+#overview ul {
+  list-style: none;
+}
+
 
 /* Footer */
 footer {
