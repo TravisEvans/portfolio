@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css" /> <!--testing css, important for editing-->
-  <link rel="stylesheet" href="portfolio/style.css" />
+  <link rel="stylesheet" href="/portfolio/style.css" />
 </head>
 
 <body>
@@ -44,14 +44,14 @@
   <!--no more clay from here, just magic-->
   <script>
     // header injection (this was annoying, html and it's load order make this difficult)
-    fetch("../header.html")
+    fetch("/portfolio/header.html")
         .then(res => res.text())
         .then(data => {
           document.getElementById("header").outerHTML = data;
         });
     
     // footer injection
-    fetch("../footer.html")
+    fetch("/portfolio/footer.html")
         .then(res => res.text())
         .then(data => {
           document.getElementById("footer").outerHTML = data;
