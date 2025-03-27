@@ -1,5 +1,7 @@
-/* reset and basics */
+/* Mobile first css for portfolio
+TravisEvans, 26/03/25*/
 
+/* reset and basics */
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +36,8 @@ ul {
   font-weight: 500;
   list-style-type: circle;
 }
-ul li p{
+
+ul li p {
   padding-left: 1.5em;
 }
 
@@ -42,7 +45,7 @@ p {
   font-weight: 200;
 }
 
-/* Layout */
+/* layout */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -72,17 +75,16 @@ header h1 {
 
 header h1 a {
   text-decoration: none;
-  color:#000
+  color: #000;
 }
 
 header h1 a:hover {
   text-decoration: underline #888;
-  color:#000
+  color: #000;
 }
 
 nav {
   width: 100%;
-  /* gap: 1.5rem; */
 }
 
 nav a {
@@ -95,7 +97,7 @@ nav a {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  min-height:40em;
+  min-height: 40em;
 }
 
 .hero h3 {
@@ -103,52 +105,30 @@ nav a {
   font-size: 1.6rem;
 }
 
-.textHero, .picHero {
+.textHero,
+.picHero {
   flex: 1 1 100%;
   max-width: 50%;
 }
 
 .textHero {
   background-color: #f5f7f8;
-  padding: 8rem 0 6rem 0;
+  padding: 3rem 0 1rem 0;
 }
-
-/* IMPORTANT FOR MOBILE VIEWING */
 
 .picHero {
-  background-image: url("images/lake.jpg");
-  background-size:cover;
-  background-position: 50% 100%; /*I want the duckies*/
-  background-repeat: no-repeat;
-  /* width:100%; */
+  /* not present on mobile */
+  display: none;
 }
 
-@media (max-width: 768px) { /*mobile override, not great practice. But useful for me to fix later */
-  /* .textHero, .picHero {
-      flex: 1 1 50%;
-  } */
-  .textHero {
-    padding: 3rem 0 1rem 0;
-    h2 {
-      font-size: 2em;
-    }
-    h3 {
-      font-size: 1.2em;
-    }
-  }
-  .picHero {
-    display:none;
-  }
-}
-
+/* headings */
 h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 300;
 }
 
 h3 {
-  font-size: 1.9rem;
-  /* margin-bottom: 1.5rem; */
+  font-size: 1.2rem;
   font-weight: 200;
   color: #000;
 }
@@ -158,7 +138,7 @@ h3 {
   color: #000;
 }
 
-/* Sections */
+/* sections */
 .section {
   padding: 5rem 0;
 }
@@ -184,7 +164,6 @@ h3 {
   list-style: none;
 }
 
-
 /* Footer */
 footer {
   padding: 4rem 0 2rem 0;
@@ -195,10 +174,25 @@ footer {
   z-index: 999;
 }
 
-/*links*/
-/*.fira-code-<uniquifier> {
-  font-family: "Fira Code", monospace;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}no use rn*/
+/* media query for desktop or larger screens */
+@media (min-width: 768px) {
+  .textHero {
+    padding: 8rem 0 6rem 0;
+  }
+
+  .picHero {
+    display: flex;
+    background-image: url("images/lake.jpg");
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 1.9rem;
+  }
+}
