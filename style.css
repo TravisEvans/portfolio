@@ -93,6 +93,7 @@ nav a {
 /* my god damn hero */
 .hero {
   display: flex;
+  flex-wrap: wrap;
   text-align: center;
   min-height:40em;
 }
@@ -103,7 +104,8 @@ nav a {
 }
 
 .textHero, .picHero {
-  flex: 1;
+  flex: 1 1 100%;
+  max-width: 50%;
 }
 
 .textHero {
@@ -111,12 +113,32 @@ nav a {
   padding: 8rem 0 6rem 0;
 }
 
+/* IMPORTANT FOR MOBILE VIEWING */
+
 .picHero {
   background-image: url("images/lake.jpg");
   background-size:cover;
   background-position: 50% 100%; /*I want the duckies*/
   background-repeat: no-repeat;
-  width:100%;
+  /* width:100%; */
+}
+
+@media (max-width: 768px) { /*mobile override, not great practice. But useful for me to fix later */
+  /* .textHero, .picHero {
+      flex: 1 1 50%;
+  } */
+  .textHero {
+    padding: 3rem 0 1rem 0;
+    h2 {
+      font-size: 2em;
+    }
+    h3 {
+      font-size: 1.2em;
+    }
+  }
+  .picHero {
+    display:none;
+  }
 }
 
 h2 {
