@@ -37,28 +37,6 @@
   <!-- again, repeated -->
   <footer id="footer"></footer>
 
-
-  <!--no more clay from here, just magic-->
-  <script>
-    // header injection (this was annoying, html and it's load order make this difficult)
-    fetch("/header.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("header").outerHTML = data;
-        });
-    
-    // footer injection
-    fetch("/footer.html")
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById("footer").outerHTML = data;
-
-          //footer date (also anoyying, this runs after the footer is loaded)
-          document.getElementById("year").textContent = new Date().getFullYear();
-        });
-      
-  </script>
-
   <!-- header responsiveness -->
   <script src="/header.js"></script>
 
