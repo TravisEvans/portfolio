@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/portfolio/style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -16,7 +16,7 @@
   <header id="header"></header>
   
   <section class="hero">
-    <div class="picHero" style="background-image: url(../images/field.webp);">
+    <div class="picHero" style="background-image: url(images/field.webp);">
       <!--easiest way of changing image whilst ensuring an image will exist imo-->
       <!--bg image-->
     </div>
@@ -43,14 +43,14 @@
   <!--no more clay from here, just magic-->
   <script>
     // header injection (this was annoying, html and it's load order make this difficult)
-    fetch("/portfolio/header.html")
+    fetch("/header.html")
         .then(res => res.text())
         .then(data => {
           document.getElementById("header").outerHTML = data;
         });
     
     // footer injection
-    fetch("/portfolio/footer.html")
+    fetch("/footer.html")
         .then(res => res.text())
         .then(data => {
           document.getElementById("footer").outerHTML = data;
@@ -62,7 +62,7 @@
   </script>
   
   <!-- header responsiveness -->
-  <script src="/portfolio/header.js"></script>
+  <script src="/header.js"></script>
 
 </body>
 
