@@ -31,6 +31,10 @@ a:hover {
   text-decoration: underline;
 }
 
+:target {
+  color: #00ff00;
+}
+
 ul {
   padding-left: 2.5em;
   font-weight: 500;
@@ -218,7 +222,7 @@ footer {
 
   .picHero {
     display: flex;
-    background-image: url("images/lake.jpg");
+    background-image: url("images/lake.webp"); /*changes per page, inline override*/
     background-size: cover;
     background-position: 50% 100%;
     background-repeat: no-repeat;
