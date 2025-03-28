@@ -160,8 +160,27 @@ h3 {
 }
 
 /* id items */
+#inlineNav {
+  /* these are important for header responsiveness */
+  display: none;
+}
+
+#dropdownNav {
+  /* these are important for header responsiveness */
+  display: inline;
+}
+
 #overview ul {
   list-style: none;
+}
+
+#dropdownNav .dropdownLinks {
+  display: none;
+}
+
+/* When the .show class is added, display the dropdown content */
+#dropdownNav.show .dropdownLinks {
+  display: block;
 }
 
 /* Footer */
@@ -194,5 +213,14 @@ footer {
 
   h3 {
     font-size: 1.9rem;
+  }
+
+  /* id items */
+  #inlineNav { /* these are important for header responsiveness */
+    display: inline;
+  }
+
+  #dropdownNav { /* these are important for header responsiveness */
+    display: none;
   }
 }
