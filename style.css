@@ -27,7 +27,7 @@ a {
 }
 
 a:hover {
-  color: #0f3bfc;
+  color: #0a2dc9;
   text-decoration: underline;
 }
 
@@ -92,6 +92,18 @@ nav a {
   margin-left: 1.8em;
 }
 
+/* headings */
+h2 {
+  font-size: 2.1em;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 200;
+  color: #000;
+}
+
 /* my god damn hero */
 .hero {
   display: flex;
@@ -121,18 +133,6 @@ nav a {
   display: none;
 }
 
-/* headings */
-h2 {
-  font-size: 2em;
-  font-weight: 300;
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 200;
-  color: #000;
-}
-
 .hero p {
   font-size: 1.2rem;
   color: #000;
@@ -151,6 +151,7 @@ h3 {
   background-color: #e3e6ea;
 }
 
+/* misc */
 .noteableList {
   padding-left: 0;
 }
@@ -159,14 +160,22 @@ h3 {
   margin-bottom: 1rem;
 }
 
+/* responsive header */
+.dropdownLinks a {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 0.5%;
+}
+
 /* id items */
 #inlineNav {
-  /* these are important for header responsiveness */
+  /* these are important for header display responsiveness */
   display: none;
 }
 
 #dropdownNav {
-  /* these are important for header responsiveness */
+  /* these are important for header display responsiveness */
   display: inline;
 }
 
@@ -195,6 +204,14 @@ footer {
 
 /* media query for desktop or larger screens */
 @media (min-width: 768px) {
+  h2 {
+    font-size: 2.5em;
+  }
+
+  h3 {
+    font-size: 1.9rem;
+  }
+
   .textHero {
     padding: 8rem 0 6rem 0;
   }
@@ -207,20 +224,12 @@ footer {
     background-repeat: no-repeat;
   }
 
-  h2 {
-    font-size: 2.5em;
-  }
-
-  h3 {
-    font-size: 1.9rem;
-  }
-
   /* id items */
-  #inlineNav { /* these are important for header responsiveness */
+  #inlineNav { /* these are important for header display responsiveness */
     display: inline;
   }
 
-  #dropdownNav { /* these are important for header responsiveness */
+  #dropdownNav { /* these are important for header display responsiveness */
     display: none;
   }
 }
