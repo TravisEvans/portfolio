@@ -247,10 +247,10 @@ footer {
 
 /* <weight>: Use a value from 100 to 900
 <uniquifier>: Use a unique and descriptive class name */
-/* .roboto-<uniquifier> {
+/* .roboto-font> {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 300;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
