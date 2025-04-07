@@ -97,7 +97,10 @@ h2 {
 
 h3 {
   font-size: 1.6rem;
+  line-height: 1.1em;
   a {
+    color: black;
+    line-height: 1em;
     text-decoration: 1px underline;
   }:hover {
     text-decoration: 2px underline;
@@ -222,6 +225,7 @@ footer {
 @media (min-width: 768px) {
   h2 {
     font-size: 2.5em;
+    line-height:1.2em;
   }
 
   h3 {
