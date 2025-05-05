@@ -1,0 +1,290 @@
+/* Mobile first css for portfolio
+TravisEvans, 26/03/25*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #000;
+  background-color: #f5f7f8;
+  line-height: 2em;
+}
+
+a {
+  color: #5874be;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0a2dc9;
+  text-decoration: underline;
+}
+
+:target {
+  color: #00ff00;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+ul li p {
+  padding-left: 1.5em;
+}
+
+/* layout */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 680px;
+}
+
+/* Header */
+header {
+  display: flex;
+  background-color: #e3e6eaf9;
+  padding: 1em 0;
+  border-bottom: 1px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: #000;
+}
+
+header h1 a:hover {
+  text-decoration: underline #888;
+  color: #000;
+}
+
+nav {
+  width: 100%;
+  /* padding-left: 10px; */
+}
+
+nav a {
+  float: right;
+  margin-left: 1.8em;
+}
+
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Lato";
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2.1em;
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 1.1em;
+
+  a {
+    color: black;
+    line-height: 1em;
+    text-decoration: 1px underline;
+  }
+
+  :hover {
+    text-decoration: 2px underline;
+    /* color: #2c3e50; */
+  }
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+/* my god damn hero */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  min-height: 40em;
+}
+
+.hero h3 {
+  margin-top: 0.5em;
+  font-size: 1.6rem;
+}
+
+.textHero,
+.picHero {
+  flex: 1 1 100%;
+  max-width: 50%;
+}
+
+.textHero {
+  background-color: #f5f7f8;
+  padding: 3rem 0 1rem 0;
+}
+
+.picHero {
+  /* not present on mobile */
+  display: none;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* sections */
+.section {
+  padding: 5rem 0;
+}
+
+.section.light {
+  background-color: #fff;
+}
+
+.section.dark {
+  background-color: #e3e6ea;
+}
+
+/* misc */
+.noteableList {
+  padding-left: 5%;
+}
+
+.noteableList li:first-child {
+  margin-top: 1rem;
+}
+
+/* responsive header */
+.dropdownLinks a {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  display: block;
+  margin-top: 0.5%;
+}
+
+/* project list display */
+.projectHeading {
+  line-height: 0.25em;
+  width: 100%;
+}
+
+.projectLink {
+  font-size: 0.75em;
+  padding-top: 0;
+}
+
+/* id items */
+#inlineNav {
+  /* these are important for header display responsiveness */
+  display: none;
+}
+
+#dropdownNav {
+  /* these are important for header display responsiveness */
+  display: block;
+  width: 100%;
+}
+
+#overview ul {
+  list-style: none;
+}
+
+.dropdownLinks a {
+  display: block;
+  padding: 0.5rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #000;
+  background-color: #e3e6eaf9;
+  z-index: 999;
+}
+
+/* media query for desktop or larger screens */
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  .textHero {
+    align-self: center;
+    padding: 0 0 6rem 0;
+  }
+
+  .picHero {
+    display: flex;
+    background-image: url("./images/lake.webp");
+    /*changes per page, inline override*/
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  /* id items */
+  #inlineNav {
+    /* these are important for header display responsiveness */
+    display: inline;
+  }
+
+  #dropdownNav {
+    /* these are important for header display responsiveness */
+    display: none;
+  }
+}
+
+/* external sources */
+
+/* <weight>: Use a value from 300 to 700
+<uniquifier>: Use a unique and descriptive class name */
+/* .fira-code-<uniquifier> {
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* <weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name */
+/* .roboto-font> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
