@@ -27,7 +27,7 @@ const Header = () => {
                 <h1 style={{ flexShrink: 0 }}><Link to="/">Travis Evans</Link></h1>
                 <nav style={{ width: "100%" }}>
                     <div id="inlineNav">
-                        <p style={{ display: "inline" }}>Portfolio of works</p>
+                        <p style={{ display: "inline" }}>&nbsp;Portfolio of works</p>
                         <Link to="/contact">Contact</Link>
                         <Link to="/about">About</Link>
                         <Link to="/projects">Projects</Link>
@@ -35,7 +35,7 @@ const Header = () => {
                     </div>
 
                     <div id="dropdownNav">
-                        <p style={{ display: "inline"}}>Portfolio of works</p>
+                        <p style={{ display: "inline"}}>&nbsp;Portfolio of works</p>
                         <button
                             className="icon"
                             aria-label="Toggle navigation"
