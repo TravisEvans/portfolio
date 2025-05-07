@@ -265,6 +265,9 @@ footer {
         background-repeat: no-repeat;
         height: auto;
     }
+    .forcePicHeroLeft {
+        order: 1;
+    }
 
     /* id items */
     #inlineNav {

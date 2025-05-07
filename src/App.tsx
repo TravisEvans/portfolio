@@ -106,7 +106,7 @@ const Projects = () => (
 const About = () => (
   <>
     <section className="hero">
-      <div className="picHero" style={{ backgroundImage: "url(/images/mountain.webp)", backgroundPosition: "top center", order:1 }} />
+      <div className="picHero forcePicHeroLeft" style={{ backgroundImage: "url(/images/mountain.webp)", backgroundPosition: "top center"}} />
       <div className="textHero container">
         <h2>Who I am.</h2><br />
         <h2>What I do.</h2>
@@ -136,7 +136,7 @@ const About = () => (
 const Contact = () => (
   <>
     <section className="hero">
-      <div className="picHero" style={{ backgroundImage: "url(/images/field.webp)", order: 1 }} />
+      <div className="picHero forcePicHeroLeft" style={{ backgroundImage: "url(/images/field.webp)"}} />
       <div className="textHero container">
         <h2>Get in touch.</h2>
         <h3>Or just go <Link to="/projects">look at my works.</Link></h3>
