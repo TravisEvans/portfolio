@@ -1,4 +1,4 @@
-const DummyPage = () => {
+const NotFound = () => {
     return (
         <>
             <section className="hero">
@@ -15,4 +15,4 @@ const DummyPage = () => {
     );
 };
 
-export default DummyPage;
+export default NotFound;

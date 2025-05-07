@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Header from "./Header.tsx"
 import Artists from "./misc/Artists.tsx"
+import NotFound from "./misc/404.tsx"
 import "./index.css";
 
 
@@ -176,6 +177,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/misc/artists" element={<Artists />} />
+        <Route path="*" element={<NotFound />} />  {/* catch all */}
       </Routes>
       <Footer />
     </Router>
