@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Header from "./Header.tsx"
 import Artists from "./misc/Artists.tsx"
 import NotFound from "./misc/404.tsx"
+import Pics from "./misc/pics"
 import "./App.css";
 
 
@@ -58,7 +59,7 @@ const Home = () => (
         <h3>Noteable works</h3>
         <ul className="noteableList">
           <li><a href="https://chat.travisevans.org">Universal public chat app</a></li>
-          <li><a href="https://nexus.travisevans.org">API Nexus</a></li>
+          <li><a href="https://rivals.travisevans.org">Rivals exercise tracker</a></li>
         </ul>
       </div>
     </section>
@@ -92,12 +93,21 @@ const Projects = () => (
       </div>
     </section>
 
-    {/* API Nexus */}
+    {/* Rivals */}
     <section className="section">
       <div className="container narrow">
-        <h3 className="projectHeading"><a href="https://nexus.travisevans.org">-&gt;API Nexus.</a></h3>
-        <span className="projectLink">nexus.travisevans.org</span>
-        <p>I wanted to put useable API information somewhere, mainly for convenience.<br />For this reason, I put some personally useful APIs together, and add more intermittently.</p>
+        <h3 className="projectHeading"><a href="https://rivals.travisevans.org">-&gt;Rivals minimal exercise tracker.</a></h3>
+        <span className="projectLink">https://rivals.travisevans.org</span>
+        <p>A scaleable project for group or individual exercise tracking, designed to increase exercise consistency.</p>
+      </div>
+    </section>
+
+    {/* Photography */}
+    <section className="section light">
+      <div className="container narrow">
+        <h3 className="projectHeading"><Link to="/misc/pics" >-&gt;Photography portfolio.</Link></h3>
+        <span className="projectLink">https://travisevans.org/misc/pics</span>
+        <p>A portfolio of some of my favourite images.</p>
       </div>
     </section>
   </>
@@ -177,6 +187,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/misc/artists" element={<Artists />} />
+        <Route path="/misc/pics" element={<Pics />} />
         <Route path="*" element={<NotFound />} />  {/* catch all */}
       </Routes>
       <Footer />
