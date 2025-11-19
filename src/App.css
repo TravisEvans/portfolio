@@ -22,6 +22,18 @@ body {
     color: #000;
     background-color: #f5f7f8;
     line-height: 2em;
+    height:100%
+}
+
+#app-shell {
+    min-height: 100vh;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+}
+
+#app-main {
+    flex: 1;
 }
 
 a {
@@ -225,12 +237,13 @@ h4 {
 
 /* Footer */
 footer {
+    /* position: absolute; */
+    width: 100%;
     padding: 4rem 0 2rem 0;
     text-align: center;
     font-size: 0.85rem;
     color: #000;
     background-color: #e3e6eaf9;
-    z-index: 999;
 }
 
 /* media query for desktop or larger screens */
