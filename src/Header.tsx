@@ -30,6 +30,7 @@ const Header = () => {
                         <p style={{ display: "inline" }}>&nbsp;Portfolio of works</p>
                         <Link to="/contact">Contact</Link>
                         <Link to="/about">About</Link>
+                        <Link to="/blog">Blog</Link>
                         <Link to="/projects">Projects</Link>
                         <Link to="/">Home</Link>
                     </div>
@@ -62,6 +63,7 @@ const Header = () => {
                             >
                             <Link to="/" onClick={() => setDropdownOpen(false)}>Home</Link>
                             <Link to="/projects" onClick={() => setDropdownOpen(false)}>Projects</Link>
+                            <Link to="/blog" onClick={() => setDropdownOpen(false)}>Blog</Link>
                             <Link to="/about" onClick={() => setDropdownOpen(false)}>About</Link>
                             <Link to="/contact" onClick={() => setDropdownOpen(false)}>Contact</Link>
                         </div>

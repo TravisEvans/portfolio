@@ -1,12 +1,47 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Markdown from "react-markdown";
+
 import Header from "./Header.tsx"
+import Card from "./assets/Card.tsx"
 import Artists from "./misc/Artists.tsx"
 import NotFound from "./misc/404.tsx"
 import Pics from "./misc/pics"
 import "./App.css";
 
 
+// ____________ blog files ____________
+
+const files = import.meta.glob('../blog/*.md', { query: '?raw', import: 'default', eager: true });
+
+function parseFrontmatter(raw: string) {
+    const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+    if (!match) return { data: {}, content: raw };
+
+    const frontmatter = match[1];
+    const content = match[2];
+
+    const data: Record<string, string> = {};
+    frontmatter.split('\n').forEach(line => {
+        const [key, ...rest] = line.split(':');
+        if (key) data[key.trim()] = rest.join(':').trim();
+    });
+
+    return { data, content };
+}
+
+const posts = Object.values(files).map((raw) => {
+    const { data, content } = parseFrontmatter(raw as string);
+    return {
+        title: data.title ?? 'Untitled',
+        date: data.date ?? '',
+        content,
+    };
+});
+
+
+
+// ____________ pages ____________
 
 const Home = () => (
 	<>
@@ -15,7 +50,7 @@ const Home = () => (
 				<h2>Design & development portfolio.</h2>
 				<h3><Link to="/projects">See my works.</Link></h3>
 			</div>
-			<div className="picHero" style={{ backgroundImage: "url(/images/lake.webp)" }} /> {/*redundant code?*/}
+			<div className="picHero" style={{ backgroundImage: "url(/images/lake.webp)" }} />
 		</section>
 
 		<section id="overview" className="section light">
@@ -143,6 +178,35 @@ const About = () => (
 	</>
 );
 
+const Blog = () => {
+    const openPost = () => {
+        
+    };
+
+    const postCards = () => posts.map(post => (
+        <div key={post.title+'_'+post.date} onClick={openPost} className="postCard">
+            <Card title={post.title} description={post.date} />
+        </div>
+    ));
+
+    return (
+        <>
+            <section className="hero">
+                <div className="textHero container">
+                    <h2>Blog.</h2>
+                    <h3>Probably worth the read.</h3>
+                </div>
+            </section>
+
+            <section id="blog" className="section light">
+                <div className="container">
+                    {postCards()}
+                </div>
+            </section>
+        </>
+    )
+};
+
 const Contact = () => (
 	<>
 		<section className="hero">
@@ -188,6 +252,7 @@ const App = () => {
 				<Route path="/projects" element={<Projects />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/about" element={<About />} />
+				<Route path="/blog" element={<Blog />} />
 				<Route path="/misc/artists" element={<Artists />} />
 				<Route path="/misc/pics" element={<Pics />} />
 				<Route path="*" element={<NotFound />} />  {/* catch all */}

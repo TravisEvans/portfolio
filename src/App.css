@@ -6,8 +6,8 @@ TravisEvans, 26/03/25*/
 
 /* reset and basics */
 * {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     box-sizing: border-box;
 }
 
@@ -292,4 +292,11 @@ footer {
         /* these are important for header display responsiveness */
         display: none;
     }
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
