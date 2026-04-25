@@ -1,8 +1,34 @@
-const Card = ({ title, description }: { title: string; description: string }) => (
-    <div className="card mb-5">
-        <h3>{title}</h3>
-        <p>{description}</p>
-    </div>
-);
+import Markdown from "react-markdown";
+
+interface CardProps {
+    title: string;
+    date: string;
+    content: string;
+    button?: string;
+    fn?: () => void;
+    className?: string;
+}
+
+function Card({ title, date, content, button, fn, className }: CardProps) {
+
+    const buttonCheck = () => button ? 
+    <div className="col flex justify-end"><a onClick={fn} className="btn btn-primary">{button}</a></div> : 
+    <></>;
+
+    return (
+        <div className={`card ${className}`}>
+            <div className="row">
+                <div className="col">
+                    <h3>{title}</h3>
+                    <small>{date}</small>
+                    <hr />
+                    <p>{content}</p>
+                    <br />
+                </div>
+                {buttonCheck()}
+            </div>
+        </div>
+    )
+}
 
 export default Card;

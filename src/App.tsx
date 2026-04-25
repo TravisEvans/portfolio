@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { createPortal } from 'react-dom';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Markdown from "react-markdown";
+// import Markdown from "react-markdown";
 
 import Header from "./Header.tsx"
 import Card from "./assets/Card.tsx"
@@ -35,6 +36,7 @@ const posts = Object.values(files).map((raw) => {
     return {
         title: data.title ?? 'Untitled',
         date: data.date ?? '',
+        summary: data.summary ?? '',
         content,
     };
 });
@@ -179,13 +181,13 @@ const About = () => (
 );
 
 const Blog = () => {
-    const openPost = () => {
-        
-    };
+    const [openPost, setOpenPost] = useState<typeof posts[0] | null>(null);
+
+    const closePost = () => setOpenPost(null);
 
     const postCards = () => posts.map(post => (
-        <div key={post.title+'_'+post.date} onClick={openPost} className="postCard">
-            <Card title={post.title} description={post.date} />
+        <div key={post.title + '_' + post.date} className="postCard mb-5">
+            <Card title={post.title} date={post.date} content={post.summary} button="Read more" fn={() => setOpenPost(post)} />
         </div>
     ));
 
@@ -203,6 +205,15 @@ const Blog = () => {
                     {postCards()}
                 </div>
             </section>
+
+            {openPost && createPortal(
+                <div className="modal-overlay" onClick={closePost}>
+                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                        <Card title={openPost.title} date={openPost.date} content={openPost.content} button="Close post" fn={closePost} />
+                    </div>
+                </div>,
+                document.body
+            )}
         </>
     )
 };
