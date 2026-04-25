@@ -19,10 +19,10 @@ function Card({ title, date, content, button, fn, className }: CardProps) {
         <div className={`card ${className}`}>
             <div className="row">
                 <div className="col">
-                    <h3>{title}</h3>
-                    <small>{date}</small>
-                    <hr />
-                    <p>{content}</p>
+                    <Markdown>{`### ${title}`}</Markdown>
+                    <Markdown>{`${date}`}</Markdown>
+                    <Markdown>{`---`}</Markdown>
+                    <Markdown>{content}</Markdown>
                     <br />
                 </div>
                 {buttonCheck()}

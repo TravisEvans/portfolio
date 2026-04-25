@@ -1,7 +1,7 @@
 ---
 title: init post
 date: 2026-04-14
-summary: Init post. punk
+summary: Init post.
 ---
 
 Nothing of note in this one. Just the init post.

@@ -40,6 +40,7 @@ const posts = Object.values(files).map((raw) => {
         content,
     };
 });
+posts.reverse();
 
 
 
